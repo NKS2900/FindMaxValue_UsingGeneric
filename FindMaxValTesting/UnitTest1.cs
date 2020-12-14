@@ -28,5 +28,15 @@ namespace FindMaxValTesting
             Assert.AreEqual(maxNumber, result);
         }
 
+        /// <summary>
+        /// Givens the maximum number third position.
+        /// </summary>
+        [TestMethod]
+        public void GivenMaxNumber_ThirdPosition()
+        {
+            int result = MaximumNumberCheck.MaximumIntegerNumber(10, 20, 40);
+            int maxNumber = 40;
+            Assert.AreEqual(maxNumber, result);
+        }
     }
 }
