@@ -16,5 +16,17 @@ namespace FindMaxValTesting
             int maxNumber = 40;
             Assert.AreEqual(maxNumber, result);
         }
+
+        /// <summary>
+        /// Givens the maximum number second position.
+        /// </summary>
+        [TestMethod]
+        public void GivenMaxNumber_SecondPosition()
+        {
+            int result = MaximumNumberCheck.MaximumIntegerNumber(10, 40, 30);
+            int maxNumber = 40;
+            Assert.AreEqual(maxNumber, result);
+        }
+
     }
 }
