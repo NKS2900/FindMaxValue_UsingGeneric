@@ -38,5 +38,36 @@ namespace FindMaxValTesting
             int maxNumber = 40;
             Assert.AreEqual(maxNumber, result);
         }
+
+        /// <summary>
+        /// Given the maximum float number first position.
+        /// </summary>
+        [TestMethod]
+        public void GivenMaxFloatNumber_FirstPosition()
+        {
+            double result = MaximumNumberCheck.MaximumFloatNumber(55.5, 20.2, 33.3);
+            double maxNumber = 55.5;
+            Assert.AreEqual(maxNumber, result);
+        }
+
+        /// <summary>
+        /// Given the maximum float number second position.
+        /// </summary>
+        public void GivenMaxFloatNumber_SecondPosition()
+        {
+            double result = MaximumNumberCheck.MaximumFloatNumber( 20.2,55.5, 33.3);
+            double maxNumber = 55.5;
+            Assert.AreEqual(maxNumber, result);
+        }
+
+        /// <summary>
+        /// Given the maximum float number third position.
+        /// </summary>
+        public void GivenMaxFloatNumber_ThirdPosition()
+        {
+            double result = MaximumNumberCheck.MaximumFloatNumber(20.2, 33.3, 55.5);
+            double maxNumber = 55.5;
+            Assert.AreEqual(maxNumber, result);
+        }
     }
 }
