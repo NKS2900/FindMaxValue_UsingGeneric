@@ -29,7 +29,7 @@ namespace FindMaxValue_UsingGeneric
         /// <param name="secondValue">The second value.</param>
         /// <param name="thirdValue">The third value.</param>
         /// <returns></returns>
-        public static T testMaximum<T>(T firstValue, T secondValue, T thirdValue) where T : IComparable
+        public static T testMaximum(T firstValue, T secondValue, T thirdValue) 
         {
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
                 firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
