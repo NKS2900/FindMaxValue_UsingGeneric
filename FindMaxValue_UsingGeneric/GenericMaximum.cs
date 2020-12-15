@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FindMaxValue_UsingGeneric
 {
-    public class GenricMaximum<T> where T : IComparable
+    public class GenericMaximum<T> where T : IComparable
     {
         
         public T[] value;
@@ -12,7 +12,7 @@ namespace FindMaxValue_UsingGeneric
         /// Initializes a new instance of the <see cref="GenricMaximum{T}"/> class.
         /// </summary>
         /// <param name="value">The value.</param>
-        public GenricMaximum(T [] value)
+        public GenericMaximum(T [] value)
         {           
             this.value = value;
         }
@@ -78,6 +78,15 @@ namespace FindMaxValue_UsingGeneric
         {
             var Max = MaxValue(this.value);
             return Max;
+        }
+
+        /// <summary>
+        /// Printing the max value.
+        /// </summary>
+        public void PrintMAxValue()
+        {
+            var max = MaxValue(this.value);
+            Console.WriteLine("MAximum value is : " + max);
         }
     }
 }

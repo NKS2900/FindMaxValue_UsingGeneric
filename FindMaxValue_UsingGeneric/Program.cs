@@ -19,7 +19,9 @@ namespace FindMaxValue_UsingGeneric
             Console.WriteLine(stringValue);
             Console.WriteLine("==========");
             int[] arr = { 12, 45, 41, 22, 66 };
-            GenricMaximum<int> generic = new GenricMaximum<int>(arr);
+            GenericMaximum<int> generic = new GenericMaximum<int>(arr);
+            generic.PrintMAxValue();
+
         }
     }
 }
