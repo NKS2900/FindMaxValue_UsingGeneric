@@ -6,29 +6,25 @@ namespace FindMaxValue_UsingGeneric
 {
     public class GenricMaximum<T> where T : IComparable
     {
-        public T firstValue, secondValue, thirdValue;
-
+        
+        public T[] value;
         /// <summary>
         /// Initializes a new instance of the <see cref="GenricMaximum{T}"/> class.
         /// </summary>
-        /// <param name="firstValue">The first value.</param>
-        /// <param name="secondValue">The second value.</param>
-        /// <param name="thirdValue">The third value.</param>
-        public GenricMaximum(T firstValue, T secondValue, T thirdValue)
-        {
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
+        /// <param name="value">The value.</param>
+        public GenricMaximum(T [] value)
+        {           
+            this.value = value;
         }
 
         /// <summary>
         /// Tests the maximum.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="firstValue">The first value.</param>
         /// <param name="secondValue">The second value.</param>
         /// <param name="thirdValue">The third value.</param>
-        /// <returns></returns>
+        /// <returns>maxValue</returns>
+        /// <exception cref="Exception">firstValue,secondValue,thirdValue are same</exception>
         public static T testMaximum(T firstValue, T secondValue, T thirdValue) 
         {
             if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
@@ -49,7 +45,39 @@ namespace FindMaxValue_UsingGeneric
             {
                 return thirdValue;
             }
-            return default;
+            throw new Exception("firstValue,secondValue,thirdValue are same");
+        }
+
+        /// <summary>
+        /// Sorts the specified values.
+        /// </summary>
+        /// <param name="values">The values.</param>
+        /// <returns></returns>
+        public T[] Sort(T[] values)
+        {
+            Array.Sort(values);
+            return values;
+        }
+
+        /// <summary>
+        /// Maximums the value.
+        /// </summary>
+        /// <param name="values">The values.</param>
+        /// <returns></returns>
+        public T MaxValue( T[] values)
+        {
+            var sorted_value = Sort(values);
+            return sorted_value[^1];
+        }
+
+        /// <summary>
+        /// Maximum method.
+        /// </summary>
+        /// <returns></returns>
+        public T MaxMethod()
+        {
+            var Max = MaxValue(this.value);
+            return Max;
         }
     }
 }
